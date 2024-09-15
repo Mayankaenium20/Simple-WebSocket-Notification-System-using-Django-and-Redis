@@ -186,9 +186,6 @@ For this project to run correctly, you need to start two servers in parallel:
 ### Important:
 - Both servers need to be started simultaneously, each in its own terminal window. 
 - Daphne handles WebSocket connections (on port 8001 in this case), while the `runserver` command manages HTTP traffic on the default port (8000).
-
-  Here's how you can add the explanation of using `uvicorn` as an alternative to `daphne` in your GitHub documentation:
-
 ---
 
 ### Using `uvicorn` as an Alternative to `daphne`
