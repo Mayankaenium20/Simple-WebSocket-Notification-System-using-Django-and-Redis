@@ -141,10 +141,12 @@ async_to_sync(channel_layer.group_send)(
 ### Screenshots
 
 1. **WebSocket Connection Example**:
-   ![WebSocket Connection](assets/1)
+   
+   ![WebSocket Connection](assets/websocket.png)
 
-2. **Notification Generated via Django Admin**:
-   ![Notification Example](relative/path/to/screenshot2.png)
+3. **Notification Generated via Django Admin**:
+   
+   ![Notification Example](assets/admin.png)
 
 ### Redis Management with Brew
 
