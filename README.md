@@ -141,7 +141,7 @@ async_to_sync(channel_layer.group_send)(
 ### Screenshots
 
 1. **WebSocket Connection Example**:
-   ![WebSocket Connection](relative/path/to/screenshot1.png)
+   ![WebSocket Connection](assets/1)
 
 2. **Notification Generated via Django Admin**:
    ![Notification Example](relative/path/to/screenshot2.png)
@@ -184,6 +184,39 @@ For this project to run correctly, you need to start two servers in parallel:
 ### Important:
 - Both servers need to be started simultaneously, each in its own terminal window. 
 - Daphne handles WebSocket connections (on port 8001 in this case), while the `runserver` command manages HTTP traffic on the default port (8000).
+
+  Here's how you can add the explanation of using `uvicorn` as an alternative to `daphne` in your GitHub documentation:
+
+---
+
+### Using `uvicorn` as an Alternative to `daphne`
+
+While this project uses `daphne` to serve the ASGI application, you can alternatively use `uvicorn`, which is another ASGI server commonly used in Django Channels projects. `uvicorn` is known for its speed and lightweight nature, making it a great alternative for handling WebSocket connections.
+
+To use `uvicorn`:
+
+1. **Install `uvicorn`:**
+   You can install `uvicorn` via pip:
+   ```bash
+   pip install uvicorn
+   ```
+
+2. **Start the ASGI server using `uvicorn`:**
+   Instead of running `daphne` or `python manage.py runserver`, you can start the server using `uvicorn` with the following command:
+   ```bash
+   uvicorn core.asgi:application --host 127.0.0.1 --port 8001
+   ```
+   This command will run the ASGI application defined in `core.asgi`.
+
+3. **Run the Django management server**:
+   In another terminal, run the Django development server as usual:
+   ```bash
+   python manage.py runserver 127.0.0.1:8000
+   ```
+
+This way, `uvicorn` will handle WebSocket connections on port `8001`, while Django serves regular HTTP requests on port `8000`. Make sure both servers are running simultaneously for full functionality.
+
+
 
 
 
